@@ -4,7 +4,6 @@ export const defaultState = {
         id:"U1",
         name:"Dev",
         passwordHash:md5("TUPLES"),
-        friends:[`U2`]
     }],    
     employees: [{
         name: 'John',
