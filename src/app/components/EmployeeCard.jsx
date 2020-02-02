@@ -3,27 +3,18 @@
  * The component automatically calls the REST API [via a mutation] to update the server on every change.
  */
 import React from 'react';
-import uuid from 'uuid';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { ConnectedUsernameDisplay } from './UsernameDisplay'
-import {
-    setTaskCompletion,
-    addTaskComment,
-    setTaskGroup,
-    setTaskName
-} from '../store/mutations'
-
 const EmployeeCard = ({
+    _id,
     name,
     department,
     designation,
     dateofjoining,
-    dateofbirth,
     mobile,
     email,
-    address
+    address,
 })=>{
     console.log(name);
     return (        
@@ -49,9 +40,11 @@ const EmployeeCard = ({
                                 <p className="card-text">Mobile: {mobile}</p>
                                 <p className="card-text">Email: {email}</p>
                                 <p className="card-text">Address: {address}</p>
-                                <button className="form-control mt-2 btn btn-primary">
-                                    View Report
-                                </button>
+                                <Link to={`/employee/${_id}`}>
+                                    <button className="form-control mt-2 btn btn-primary">
+                                        View Report
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -61,17 +54,4 @@ const EmployeeCard = ({
     )
 }
 
-function mapStateToProps(state,ownProps){
-    
-    return {
-        
-    }
-}
-
-function mapDispatchToProps(dispatch, ownProps){
-    return {
-        
-    }
-}
-
-export const EmployeeCardDetails = connect(mapStateToProps,mapDispatchToProps)(EmployeeCard);
+export const EmployeeCardDetails = connect(null,null)(EmployeeCard);

@@ -11,11 +11,11 @@ const SignupComponent = ({requestCreateUserAccount,authenticated})=>{
         <form onSubmit={requestCreateUserAccount}>
             <label className="input-field">
                 <span>User Name</span>
-                <input type="text" placeholder="username" name="username" defaultValue="Morty" className="form-control"/>
+                <input type="text" placeholder="username" required name="username" defaultValue="" className="form-control"/>
             </label>
             <label className="input-field">
                 <span>Password</span>
-                <input type="text" placeholder="password" name="password" defaultValue="COURAGE" className="form-control mt-2"/>
+                <input type="password" placeholder="password" required name="password" defaultValue="" className="form-control mt-2"/>
             </label>
 
             {authenticated == mutations.USERNAME_RESERVED ? <p>A user by that name already exists.</p> : null}

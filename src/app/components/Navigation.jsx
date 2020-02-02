@@ -9,8 +9,7 @@ import React from 'react';
 import { ConnectedUsernameDisplay } from './UsernameDisplay'
 import * as mutations from '../store/mutations';
 
-const Navigation = ({id, authenticated})=> {
-    const hasNewEmployeePage = window.location.search.includes('newemployee');
+const Navigation = ({id, authenticated, showAddEmployee})=> {
     return (
     <div className="header">
         <div>
@@ -28,7 +27,7 @@ const Navigation = ({id, authenticated})=> {
             }
         </div>
         <div>
-            { authenticated && !hasNewEmployeePage ?
+            { authenticated && showAddEmployee ?
             <Link to="/newemployee">
                 <button className="form-control mt-2 btn btn-primary">
                     Add Employee

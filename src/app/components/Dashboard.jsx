@@ -10,7 +10,7 @@ import { EmployeeCardDetails } from './EmployeeCard';
 
 const Dashboard = ({employees})=>(
     <React.Fragment>
-        <ConnectedNavigation/>
+        <ConnectedNavigation showAddEmployee/>
         <div className="row">
             {employees.map(employee=>(
                 <EmployeeCardDetails key={employee._id} {...employee} className="col"/>
@@ -19,6 +19,6 @@ const Dashboard = ({employees})=>(
     </React.Fragment>
 );
 
-const mapStateToProps = ({groups, employees})=>({groups, employees});
+const mapStateToProps = ({employees})=>({employees});
 
 export const ConnectedDashboard = connect(mapStateToProps)(Dashboard);

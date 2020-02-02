@@ -43,14 +43,15 @@ export function* userAccountCreationSaga(){
     }
 }
 
-export function* newEmployeeCreationSaga(){
+export function* newEmployeeCreationSaga() {
     while (true) {
         const employee = yield take(mutations.REQUEST_NEW_EMPLOYEE_CREATION);
         try {
             const { data } = yield axios.post(url + `/employee/create`, { employee });
             console.log(data);
-
+            yield put(mutations.setEmployeeState({employees: data.state }));
             yield put(mutations.processAuthenticateUser(mutations.NEW_EMPLOYEE_CREATED));
+            yield put(mutations.processAuthenticateUser(mutations.AUTHENTICATED));
 
             history.push('/dashboard');
 

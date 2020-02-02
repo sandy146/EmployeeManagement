@@ -47,18 +47,11 @@ export const authenticationRoute = app => {
         };
 
         let userID = uuid();
-        let groupID = uuid();
 
         await collection.insertOne({
             name:username,
             id:userID,
             passwordHash:md5(password)
-        });
-
-        await db.collection(`groups`).insertOne({
-            id:groupID,
-            owner:userID,
-            name: `To Do`
         });
 
         let state = await assembleUserState({id:userID,name:username});

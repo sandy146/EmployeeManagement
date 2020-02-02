@@ -35,5 +35,6 @@ app.post('/employee/create',async (req,res)=>{
     let db = await connectDB();
     let collection = db.collection(`employees`);
     await collection.insertOne(employee);
-    res.status(200).send();
+    let state =  await db.collection(`employees`).find({}).toArray();
+    res.status(200).send({state});
 });

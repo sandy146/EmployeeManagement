@@ -14,6 +14,33 @@ export const defaultState = {
         gender: 'Male',
         mobile: '9629336423',
         email: 'test@test.com',
-        address: 'Chicago'
+        address: 'Chicago',
+        timeReport: [
+            {
+                day: 'Monday',
+                checkin: 9,
+                checkout: 17
+            },
+            {
+                day: 'Tuesday',
+                checkin: 8,
+                checkout: 16
+            },
+            {
+                day: 'Wednesday',
+                checkin: 9,
+                checkout: 18
+            },
+            {
+                day: 'Thursday',
+                checkin: 9,
+                checkout: 18
+            },
+            {
+                day: 'Friday',
+                checkin: 10,
+                checkout: 18
+            }
+        ]
     }]
 };

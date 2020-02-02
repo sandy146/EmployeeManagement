@@ -5,6 +5,7 @@ import { ConnectedDashboard } from './Dashboard'
 import { ConnectedLogin } from './Login'
 import { ConnectedSignup } from './Signup'
 import { ConnectedNewEmployee } from './NewEmployee'
+import { ConnectedEmployeeReport } from './EmployeeReport'
 import { store } from '../store';
 import { history } from '../store/history';
 import { Redirect } from 'react-router';
@@ -23,7 +24,11 @@ export const Main = ()=>(
                 <Route exact
                        path="/dashboard"
                        render={RouteGuard(ConnectedDashboard)}/>
-                <Route exact path="/newemployee" component={ConnectedNewEmployee}/>
+                <Route exact path="/newemployee"
+                        render={RouteGuard(ConnectedNewEmployee)}/>
+                <Route exact
+                       path="/employee/:id"
+                       render={RouteGuard(ConnectedEmployeeReport)} />
             </div>
         </Provider>
     </Router>

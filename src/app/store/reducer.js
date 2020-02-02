@@ -32,6 +32,8 @@ export const reducer = combineReducers({
         switch (action.type) {
             case mutations.SET_STATE:
                 return action.state.employees;
+            case mutations.SET_EMPLOYEE_STATE:
+                return action.state.employees;
         }
         return employees;
     }
