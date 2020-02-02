@@ -1,4 +1,4 @@
-# React Express Application
+# Employee Management Portal
 
 ## Introduction
 This repository contains a simple Express / React application. It is intended to demonstrate as wide an array of features as possible while still keeping the app simple and easy to understand.
