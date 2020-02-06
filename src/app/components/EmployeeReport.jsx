@@ -44,12 +44,12 @@ const EmployeeReport = ({employees, id})=>{
                         </tr>
                     </thead>
                     <tbody>
-                        {employee[0].timeReport.map(tiemItems=>(
+                        {employee[0].timeReport.map(timeItems=>(
                             <tr>
-                            <th scope="row">{tiemItems.day}</th>
-                            <td>{tiemItems.checkin}</td>
-                            <td>{tiemItems.checkout}</td>
-                            <td>{(tiemItems.checkout - tiemItems.checkin)}</td>
+                            <th scope="row">{timeItems.day}</th>
+                            <td>{timeItems.checkin}:00 AM</td>
+                            <td>{timeItems.checkout}:00 PM</td>
+                            <td>{(timeItems.checkout - timeItems.checkin)}</td>
                             </tr>
                         ))}
                     </tbody>
